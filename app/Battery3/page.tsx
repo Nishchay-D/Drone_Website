@@ -1,11 +1,10 @@
 'use client';
 
 import { useSearchParams, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { Container, Typography } from '@mui/material';
 
-
-export default function Battery1() {
+function BatteryDetails() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const id = searchParams.get('id');
@@ -19,7 +18,7 @@ export default function Battery1() {
       router.push('/unauthorized');
     }
   }, [id, router]);
-  
+
   return (
     <Container maxWidth="md" sx={{ marginTop: 4 }}>
       <Typography variant="h4" component="h1" gutterBottom>
@@ -43,3 +42,12 @@ export default function Battery1() {
     </Container>
   );
 }
+
+export default function Battery3() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BatteryDetails />
+    </Suspense>
+  );
+}
+

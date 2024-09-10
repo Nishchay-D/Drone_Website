@@ -1,11 +1,10 @@
 'use client';
 
 import { useSearchParams, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { Container, Typography } from '@mui/material';
 
-
-export default function Battery1() {
+function BatteryDetails() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const id = searchParams.get('id');
@@ -44,5 +43,13 @@ export default function Battery1() {
         <strong>Details:</strong> Ideal for medium to long-range drones.
       </Typography>
     </Container>
+  );
+}
+
+export default function Battery1() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BatteryDetails />
+    </Suspense>
   );
 }
