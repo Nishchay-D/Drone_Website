@@ -8,6 +8,9 @@ export default function Home() {
     { name: "Battery Type 3", link: "./Battery3" },
   ];
 
+  // Example authId (in a real scenario, replace this with a dynamic/authenticated value)
+  const authId = 'your-auth-id';
+
   return (
     <Container maxWidth="lg" sx={{ marginTop: 4 }}>
       <Typography variant="h3" component="h1" gutterBottom align="center">
@@ -22,11 +25,12 @@ export default function Home() {
                   {battery.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Learn more about this battery&apos;s capacity, efficiency and more.
+                  Learn more about this battery&apos;s capacity, efficiency, and more.
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link href={battery.link} passHref>
+                {/* Pass authId in the URL */}
+                <Link href={`${battery.link}?id=${authId}`} passHref>
                   <Button size="small" color="primary">
                     Learn More
                   </Button>
