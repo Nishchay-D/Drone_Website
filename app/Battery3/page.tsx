@@ -10,7 +10,7 @@ function BatteryDetails() {
   const id = searchParams.get('id');
 
   // Example valid authId (replace with real authentication logic)
-  const validAuthId = 'your-auth-id';
+  const validAuthId = 'WbK83YmNvJ620479';
 
   useEffect(() => {
     // If id is missing or incorrect, redirect to unauthorized page
