@@ -9,7 +9,7 @@ export default function Home() {
   ];
 
   // Example authId (in a real scenario, replace this with a dynamic/authenticated value)
-  const authId = 'your-auth-id';
+  const authId = 'GhT56JsPqR910283';
 
   return (
     <Container maxWidth="lg" sx={{ marginTop: 4 }}>
